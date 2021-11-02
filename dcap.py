@@ -1,6 +1,7 @@
 import argparse
 import ctypes, os
 
+from bruteForceDetection import bruteForceDetection
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-b", "--brute", action="store_true", help="Brute Force Detection - accesses btmp log")
@@ -27,7 +28,8 @@ hijackData = None
 entryData = None
 
 if args.brute:
-	#bruteData = bruteForceDetection(); from sadesh
+	bruteData = bruteForceDetection(); #from sadesh
+	print(bruteData)
 	print("Brute force detection invoked");
 
 if args.account:
