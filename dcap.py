@@ -2,6 +2,7 @@ import argparse
 import ctypes, os
 
 from bruteForceDetection import bruteForceDetection
+from rougeEntrypointDetection import rougeEntrypointDetection
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-b", "--brute", action="store_true", help="Brute Force Detection - accesses btmp log")
@@ -37,7 +38,8 @@ if args.account:
 	print("Hijacked account detection invoked");
 
 if args.entrypoint:
-	#entryData = rogueEntrypointDetection(); from chiawei
+	entryData = rougeEntrypointDetection(); #from chiawei
+	print(entryData)
 	print("Rogue entrypoint detection invoked");
 
 # and output the final form, html or text or console?
