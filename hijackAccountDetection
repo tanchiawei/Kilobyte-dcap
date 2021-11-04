@@ -1,0 +1,72 @@
+import os
+homedir = os.path.expanduser('~')
+bash_history = open(homedir+"/.zsh_history", 'r')
+
+bash_history_text = bash_history.read()
+#print(bash_history_text)
+parsed_data = bash_history_text.split('\n')
+#print(parsed_data)
+
+
+def sudoFinder(data):
+    subs = 'sudo'
+    results = [i for i in data if subs in i]
+    return results
+
+def sudoCommands(data):
+    subs = 'sudo'
+    results = [i for i in data if subs in i]
+    for j in results:
+    	print(j.strip()) 
+
+def whoamiFinder(data):
+	subs = 'whoami'
+	results = [i for i in data if subs in i]
+	return results
+	
+def whoamiFinder(data):
+	subs = 'whoami'
+	results = [i for i in data if subs in i]
+	return results 
+	 
+def idFinder(data):
+	subs = 'id'
+	results = [i for i in data if subs in i]
+	return results  	
+
+def unameFinder(data):
+	subs = 'uname'
+	results = [i for i in data if subs in i]
+	return results   
+	
+def dPacketManagerFinder(data):
+	subs = 'dpkg'
+	results = [i for i in data if subs in i]
+	return results   
+	
+def processStatusFinder(data):
+	subs = 'ps'
+	results = [i for i in data if subs in i]
+	return results 
+def HijackCheck(commandList):
+	if commandList >= 3: 
+		print('Attempted Hijack has occured')
+	else:
+		print('No occurence of Hijack')
+
+sudoAmount = len(sudoFinder(parsed_data))
+whoamiAmount =len(whoamiFinder(parsed_data))
+idAmount = len(idFinder(parsed_data))
+
+total = unameFinder(parsed_data) + dPacketManagerFinder(parsed_data) + processStatusFinder(parsed_data)
+totalAmount = len(total)
+
+print(sudoCommands(parsed_data))
+print("Instances of 'sudo(superuser)' command ran:", sudoAmount)
+print("Instances of 'whoami'command ran:", whoamiAmount)
+print("Instances of 'id' command ran:", idAmount)
+print(unameFinder(parsed_data))
+print(processStatusFinder(parsed_data))
+print(dPacketManagerFinder(parsed_data))
+print(total)
+#print(HijackCheck(totalAmount))
