@@ -31,7 +31,7 @@ With the 3 python scripts delivered we will intergrate them to our tool - dcap.p
 
 ## Dependencies
 
-
+With dcap the goal is to analyze large log files for multiple attack patterns at once, hence, there will be no need to run,traverse or analyze the logs individually and write them to a text file. Since this process is heavily streamlined for forensics investigators we have also went a step ahead to make sure there will be no additional dependencies needed to run dcap making it investigator-friendly.
 
 
 
