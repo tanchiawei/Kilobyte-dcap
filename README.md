@@ -12,7 +12,7 @@ With a single precise command, the investigator in a hurry can examine multiple 
 
 ## Project Setup
 
-NOTE: This tool is designed for Ubuntu systems only.
+NOTE: This tool is designed for Ubuntu systems.
 
 To install python3 and utmp on the machine run the following commands:
 
@@ -43,8 +43,4 @@ sudo python3 ./dcap.py -bae output.txt
 
 ## Dependencies
 
-With dcap the goal is to analyze large log files for multiple attack patterns at once, hence, there will be no need to run,traverse or analyze the logs individually and write them to a text file. The target machine will need python3 and utmp to be installed before being able to run dcap. This is so that 1- the python script will be able to run 2- dcap will be able to read encrypted utmp and wtmp logs to detect brute force.
-
-To install python3 and utmp on the machine run the following commands:
-
-sudo apt-get install python3 sudo apt-get install python3-pip sudo pip3 install utmp
+dcap requires Python 3 to run, and the utmp package must be installed in order for dcap to read the btmp and wtmp logs.
