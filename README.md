@@ -20,7 +20,10 @@ sudo apt-get install python3\
 sudo apt-get install python3-pip\
 sudo pip3 install utmp
 
-Download dcap and unzip to any folder. Alternatively, pull dcap from GitHub with git clone. Open a terminal in that folder and run the command as described in the next section.
+Download dcap and unzip to any folder. Alternatively, pull dcap from GitHub with:
+>git repo clone https://github.com/tanchiawei/Kilobyte-dcap
+
+Open a terminal in that folder and run the command as described in the next section.
 
 ## How-to run
 
@@ -48,3 +51,5 @@ NOTE: dcap must be run with sudo in order to have permissions to access files in
 ## Dependencies
 
 dcap requires Python 3 to run, and the utmp package must be instslideralled in order for dcap to read the btmp and wtmp logs.
+
+Finally, this tool is designed for the Ubuntu system.
