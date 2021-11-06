@@ -12,7 +12,7 @@ With a single precise command, the investigator in a hurry can examine multiple 
 
 ## Project Setup
 
-NOTE: This tool is designed for Ubuntu systems.
+NOTE: THIS TOOL IS DESIGNED FOR UBUNTU SYSTEMS.
 
 To install python3 and utmp on the machine run the following commands:
 
@@ -46,10 +46,8 @@ Optional arguments:
 Example usage:\
 sudo python3 ./dcap.py -bae output.txt
 
-NOTE: dcap must be run with sudo in order to have permissions to access files in /var/log!
+NOTE: dcap must be run with sudo or a similar level of permissions to access files in /var/log!
 
 ## Dependencies
 
 dcap requires Python 3 to run, and the utmp package must be instslideralled in order for dcap to read the btmp and wtmp logs.
-
-Finally, this tool is designed for the Ubuntu system.
