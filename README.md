@@ -25,13 +25,28 @@ With the 3 python scripts delivered we will intergrate them to our tool - dcap.p
 
 ## Project Setup
 
+To install python3 and utmp on the machine run the following commands:
+
+sudo apt-get install python3
+sudo apt-get install python3-pip
+sudo pip3 install utmp
 
 ## How-to run
 
 
 ## Dependencies
 
-With dcap the goal is to analyze large log files for multiple attack patterns at once, hence, there will be no need to run,traverse or analyze the logs individually and write them to a text file. Since this process is heavily streamlined for forensics investigators we have also went a step ahead to make sure there will be no additional dependencies needed to run dcap making it investigator-friendly.
+With dcap the goal is to analyze large log files for multiple attack patterns at once, hence, there will be no need to run,traverse or analyze the logs individually and write them to a text file. The target machine will need python3 and utmp to be installed before being able to run dcap. This is so that 
+1- the python script will be able to run 
+2- dcap will be able to read encrypted utmp and wtmp logs to detect brute force.
+
+To install python3 and utmp on the machine run the following commands:
+
+sudo apt-get install python3
+sudo apt-get install python3-pip
+sudo pip3 install utmp
+
+We want this process to be heavily streamlined for forensics investigators hence we have incorporated a -h arguement. This -h/--help arguments will show users how to use dcap and the possible command arguments accepted by dcap making it investigator-friendly.
 
 
 
