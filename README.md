@@ -20,6 +20,8 @@ sudo apt-get install python3\
 sudo apt-get install python3-pip\
 sudo pip3 install utmp
 
+Download dcap and unzip to any folder. Alternatively, pull dcap from GitHub with git clone. Open a terminal in that folder and run the command as described in the next section.
+
 ## How-to run
 
 usage: dcap.py [-h] [-b] [-a] [-e] outputlocation
@@ -41,6 +43,8 @@ Optional arguments:
 Example usage:\
 sudo python3 ./dcap.py -bae output.txt
 
+NOTE: dcap must be run with sudo in order to have permissions to access files in /var/log!
+
 ## Dependencies
 
-dcap requires Python 3 to run, and the utmp package must be installed in order for dcap to read the btmp and wtmp logs.
+dcap requires Python 3 to run, and the utmp package must be instslideralled in order for dcap to read the btmp and wtmp logs.
