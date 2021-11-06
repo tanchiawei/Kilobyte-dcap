@@ -45,7 +45,7 @@ To run the tool use the sudo command to run as an administrator and specify the 
 
 aditionally, you can specify a text file name to write out the output log analysis to. An exmample of a valid command will be given below:
 
-sudo python3 ./dcap -bae exporfile.txt
+sudo python3 ./dcap -bae exportfile.txt
 
 ## Dependencies
 
