@@ -12,14 +12,14 @@ def writeLog():
     # parser.add_argument('files', metavar='FILE', help='Files (utmp/wtmp/btmp) to read from', nargs='+')
     # args = parser.parse_args()
     all_contents = ""
-    logPath = ['/var/log/wtmp', '/var/log/btmp', '/var/run/utmp']
-    logName = ['wtmp', 'btmp', 'utmp']
+    logPath = ['/var/log/btmp']
+    logName = ['btmp']
 
     # for fn in args.files:
     noOfFiles = 0
     for fn in logPath:
 
-        print(fn)
+        # print(fn)
         with open(fn, 'rb') as fd:
             buf = fd.read()
             for entry in utmp.read(buf):

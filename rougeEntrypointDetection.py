@@ -13,16 +13,20 @@ import utmp as utmp
 def read_logs(path, number_files):
     all_contents = ""  # string that will contain all logs
     for files in range(0, number_files):  # iterate over all files
-        if files == number_files:
-            break
-        if files == 0:
-            fn = path
-        else:
-            fn = path + "." + str(files)
-        fl = open(fn, "r")
-        for line in fl:  # iterate over all lines in a single file
-            all_contents += line  # add line to all_contents
-        fl.close()
+        try:
+            if files == number_files:
+                break
+            if files == 0:
+                fn = path
+            else:
+                fn = path + "." + str(files)
+            fl = open(fn, "r")
+            for line in fl:  # iterate over all lines in a single file
+                all_contents += line  # add line to all_contents
+            fl.close()
+
+        except:
+            print("Log read complete")
     result = open("allLogs.txt", "w")  # create file allLogs.txt
     result.write(all_contents)
     result.close()
@@ -270,15 +274,15 @@ def rougeEntrypointDetection():
 
             if i == len(count[key]["month"]) - 1:
                 # output.append((count[key]))
-                output.append(str(count[key]["month"][i]) + " , " + str(count[key]["day"][i]) + " , " + str(count[key]["time"][i]) + " , " + str(count[key]["addeduser"][i]) + " , " + str(count[key]["type"][i]) + " , " + str(count[key]["flag"][i]))
-                #output += str(count[key]["month"][i]) + " , " + str(count[key]["day"][i]) + " , " + str(
-                    #count[key]["time"][i]) + " , " + str(count[key]["addeduser"][i]) + " , " + str(
-                    #count[key]["type"][i]) + " , " + str(count[key]["flag"][i]) + "\n"
+                output.append(str(count[key]["day"][i]) + " " + str(count[key]["month"][i]) + " " + str(count[key]["time"][i]).ljust(14) + str(count[key]["addeduser"][i]).ljust(20) + str(count[key]["type"][i]).ljust(15) + str(count[key]["flag"][i]))
+                #output += str(count[key]["month"][i]) + ", " + str(count[key]["day"][i]) + ", " + str(
+                    #count[key]["time"][i]) + ", " + str(count[key]["addeduser"][i]) + ", " + str(
+                    #count[key]["type"][i]) + ", " + str(count[key]["flag"][i]) + "\n"
 
             else:
-                output.append(str(count[key]["month"][i]) + " , " + str(count[key]["day"][i]) + " , " + str(
-                    count[key]["time"][i]) + " , " + str(count[key]["addeduser"][i]) + " , " + str(
-                    count[key]["type"][i]) + " , " + str(count[key]["flag"][i]))
+                output.append(str(count[key]["day"][i]) + " " + str(count[key]["month"][i]) + " " + str(
+                    count[key]["time"][i]).ljust(14) + str(count[key]["addeduser"][i]).ljust(20) + str(
+                    count[key]["type"][i]).ljust(15) + str(count[key]["flag"][i]))
                 # output.append((count[key]))
                 #output += str(count[key]["month"][i]) + "," + str(count[key]["day"][i]) + "," + str(
                     #count[key]["time"][i]) + "," + str(count[key]["addeduser"][i]) + "," + str(

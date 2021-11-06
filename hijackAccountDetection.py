@@ -5,26 +5,31 @@ import datetime
 import re
 import subprocess
 
+
 def sudoFinder(data):
     subs = 'sudo'
     results = [i for i in data if subs in i]
     return results
-    #for j in results:
-        #print(j.strip())
+    # for j in results:
+    # print(j.strip())
+
+
 def pwdFinder(data):
     subs = 'pwd'
     results = [i for i in data if subs in i]
     return results
+
 
 def whoamiFinder(data):
     subs = 'whoami'
     results = [i for i in data if subs in i]
     return results
 
+
 def idFinder(data):
     p = re.compile("(id$)")
     results = []
-    #subs = 'id'
+    # subs = 'id'
     for i in data:
         match = p.match(i)  # match line with regex
         if match is not None:  # if there is a match do following
@@ -35,10 +40,11 @@ def idFinder(data):
 
     return results
 
-def johnFinder(data):
-    subs = 'john'
-    results = [i for i in data if subs in i]
-    return results
+
+def unameFinder(data):
+	subs = 'uname'
+	results = [i for i in data if subs in i]
+	return results
 
 
 def hijackAccountDetection():
@@ -67,23 +73,16 @@ def hijackAccountDetection():
                 # print(filePath)
                 # allFileHistory.append(subprocess.run(['cat', filePath], stdout=subprocess.PIPE).stdout.decode('utf-8'))
                 output += subprocess.run(['cat', filePath], stdout=subprocess.PIPE).stdout.decode('utf-8')
+                # print(output)
                 allFileHistory.append(output)
                 # print(allFileHistory)
 
     for count in range(len(userFilePath)):
-        if allFileHistory[count] is not '':
+        if allFileHistory[count] != '':
             parsed_data = allFileHistory[count].split('\n')
-            eachUserStatus.append([len(sudoFinder(parsed_data)) , len(pwdFinder(parsed_data)), len(whoamiFinder(parsed_data)),len(idFinder(parsed_data))])
+            eachUserStatus.append(
+                [len(sudoFinder(parsed_data)), len(pwdFinder(parsed_data)), len(whoamiFinder(parsed_data)),len(idFinder(parsed_data)), len(unameFinder(parsed_data))])
+        else:
+            eachUserStatus.append([0, 0, 0, 0, 0])
 
-
-    return userFilePath,eachUserStatus
-
-
-
-
-
-
-
-
-
-
+    return userFilePath, eachUserStatus
