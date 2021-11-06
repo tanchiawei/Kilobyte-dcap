@@ -16,24 +16,29 @@ NOTE: This tool is designed for Ubuntu systems only.
 
 To install python3 and utmp on the machine run the following commands:
 
-sudo apt-get install python3
-sudo apt-get install python3-pip
+sudo apt-get install python3\
+sudo apt-get install python3-pip\
 sudo pip3 install utmp
 
 ## How-to run
 
 usage: dcap.py [-h] [-b] [-a] [-e] outputlocation
 
-positional arguments:
-outputlocation    Define destination and name of output file
+Positional arguments:
+>outputlocation\
+>Define destination and name of output file
 
-optional arguments:
--h, --help        show this help message and exit
--b, --brute       Brute Force Detection - examines btmp log and outputs result to console and destination file
--a, --account     Account Hijack Detection - accesses .bash_history and outputs result to console and destination file
--e, --entrypoint  Entrypoint Detection - accesses auth.log and outputs result to console and destination file
+Optional arguments:
+>-h, --help\
+>Show this help message and exit\
+>-b, --brute\
+>Brute Force Detection - examines btmp log and outputs result to console and destination file\
+>-a, --account\
+>Account Hijack Detection - accesses .bash_history and outputs result to console and destination file\
+>-e, --entrypoint\
+>Entrypoint Detection - accesses auth.log and outputs result to console and destination file
 
-Example usage:
+Example usage:\
 sudo python3 ./dcap.py -bae output.txt
 
 ## Dependencies
