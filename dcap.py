@@ -66,8 +66,6 @@ if args.account:
     f.write("\n--------------------Hijacked Account Detection Results--------------------\n");
     userFilePath, eachUserStatus = hijackAccountDetection();
 
-    print("User".ljust(30), "sudo".ljust(10), "pwd".ljust(10), "whoami".ljust(10), "id")
-    f.write("User".ljust(30) + "sudo".ljust(10) + "pwd".ljust(10) + "whoami".ljust(10) + "id" + "\n")
     print("User".ljust(30), "sudo".ljust(10), "pwd".ljust(10), "whoami".ljust(10), "id".ljust(10), "uname")
     f.write(
         "User".ljust(30) + "sudo".ljust(10) + "pwd".ljust(10) + "whoami".ljust(10) + "id".ljust(10) + "uname" + "\n")
