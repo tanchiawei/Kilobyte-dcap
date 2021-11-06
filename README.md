@@ -27,8 +27,8 @@ With the 3 python scripts delivered we will intergrate them to our tool - dcap.p
 
 To install python3 and utmp on the machine run the following commands:
 
-sudo apt-get install python3
-sudo apt-get install python3-pip
+sudo apt-get install python3\
+sudo apt-get install python3-pip\
 sudo pip3 install utmp
 
 ## How-to run

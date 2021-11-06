@@ -102,7 +102,7 @@ def rougeEntrypointDetection():
                 # Create an array of flag key
                 count[match.group(match_index)]["flag"] = []
                 # Append the data with "Not SUS" to the flag key
-                count[match.group(match_index)]["flag"].append("Not Sus")
+                count[match.group(match_index)]["flag"].append("Not Suspicious")
             else:  # if month is not empty check if username already exists
                 exists = False
                 if match.group(1) is not None:
@@ -126,7 +126,7 @@ def rougeEntrypointDetection():
                         count[match.group(match_index)]["time"].append(match.group(3))
                         count[match.group(match_index)]["addeduser"].append(match.group(5))
                         count[match.group(match_index)]["type"].append(match.group(4))
-                        count[match.group(match_index)]["flag"].append("Not Sus")
+                        count[match.group(match_index)]["flag"].append("Not Suspicious")
                         break
                 if not exists:  # if user does not exists yet, add username and ip
                     month.append(match.group(match_index))
@@ -157,7 +157,7 @@ def rougeEntrypointDetection():
                     # Create an array of flag key
                     count[match.group(match_index)]["flag"] = []
                     # Append the data with "Not SUS" to the flag key
-                    count[match.group(match_index)]["flag"].append("Not Sus")
+                    count[match.group(match_index)]["flag"].append("Not Suspicious")
 
         # print(count)
         if match2 is not None:  # if there is a match do the folloiwing
@@ -188,7 +188,7 @@ def rougeEntrypointDetection():
                 count[match2.group(match_index)]["type"] = []
                 count[match2.group(match_index)]["type"].append(match2.group(4))
                 count[match2.group(match_index)]["flag"] = []
-                count[match2.group(match_index)]["flag"].append("Not sus")
+                count[match2.group(match_index)]["flag"].append("Not Suspicious")
 
             else:  # if month is not empty check if username already exists
                 exists = False
@@ -212,7 +212,7 @@ def rougeEntrypointDetection():
                         count[match2.group(match_index)]["time"].append(match2.group(3))
                         count[match2.group(match_index)]["addeduser"].append(match2.group(5))
                         count[match2.group(match_index)]["type"].append(match2.group(4))
-                        count[match2.group(match_index)]["flag"].append("Not sus")
+                        count[match2.group(match_index)]["flag"].append("Not Suspicious")
                         break
                 if not exists:  # if user does not exists yet, add username and ip
                     # Add the matched data if month is empty
@@ -230,7 +230,7 @@ def rougeEntrypointDetection():
                     count[match2.group(match_index)]["type"] = []
                     count[match2.group(match_index)]["type"].append(match2.group(4))
                     count[match2.group(match_index)]["flag"] = []
-                    count[match2.group(match_index)]["flag"].append("Not sus")
+                    count[match2.group(match_index)]["flag"].append("Not Suspicious")
 
 
     #output = "Month" + "," + "Day" + "," + "Time " + "," + "Added User" + "," + "Type\n"  # create header for .csv
@@ -270,7 +270,7 @@ def rougeEntrypointDetection():
                                         if match4.group(1) == susIP and match4.group(2) == susMonth and match4.group(
                                                 3) == susDay:
                                             #print(match4)
-                                            count[key]["flag"][i] = "SUS"
+                                            count[key]["flag"][i] = "Suspicious"
 
             if i == len(count[key]["month"]) - 1:
                 # output.append((count[key]))
