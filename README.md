@@ -21,7 +21,7 @@ sudo apt-get install python3-pip\
 sudo pip3 install utmp
 
 Download dcap and unzip to any folder. Alternatively, pull dcap from GitHub with:
->git repo clone https://github.com/tanchiawei/Kilobyte-dcap
+>git clone https://github.com/tanchiawei/Kilobyte-dcap
 
 Open a terminal in that folder and run the command as described in the next section.
 
