@@ -22,6 +22,10 @@ With a single precise command, the investigator in a hurry can examine multiple 
 
 With the 3 python scripts delivered we will intergrate them to our tool - dcap.py and format the output for the final deliverable, streamline and standardize the arguments used to run the tool.
 
+dcap analyses potential brute force attacks patterns based on failed login attempts in a user device using the wtmp and btmp files to detect bad logins within a certain time period 
+
+The tool analyses hijack sessions based on the commands run by all users in the machine, particularly pwd,id and whoami which are commands specific in its output and not something normal users would run 
+
 
 ## Project Setup
 
