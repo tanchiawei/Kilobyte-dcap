@@ -50,4 +50,4 @@ NOTE: dcap must be run with sudo or a similar level of permissions to access fil
 
 ## Dependencies
 
-dcap requires Python 3 to run, and the utmp package must be instslideralled in order for dcap to read the btmp and wtmp logs.
+dcap requires Python 3 to run, and the utmp package must be installed in order for dcap to read the btmp and wtmp logs.
